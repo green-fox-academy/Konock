@@ -1,6 +1,6 @@
 package greenfox.academy;
 
-import java.util.Scanner;
+import java.util.*;
 
 public class Calculator {
   public static void main(String... args) {
@@ -22,9 +22,9 @@ public class Calculator {
     // Exit
     System.out.println("Welcome to the Calculator App.\nPlease type in the expression:\n(Example: + 3 3)");
     Scanner scanner = new Scanner(System.in);
-    String operation = scanner.nextLine();
-    int operand1 = scanner.nextInt();
-    int operand2 = scanner.nextInt();
+    String operation = scanner.next();
+    int operand1 = Integer.parseInt(scanner.next());
+    int operand2 = Integer.parseInt(scanner.next());
     calculate(operation, operand1, operand2);
   }
 

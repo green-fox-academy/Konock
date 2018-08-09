@@ -15,6 +15,11 @@ public class HashMapNotes {
     dictionary.put("Katze", "cat");
     dictionary.put("Hund", "dog");
 
+    /* Display content using forEach loop*/
+    for (String word : dictionary.values()) {
+      System.out.println(word);
+    }
+
     /* Display content using Iterator*/
     Set set = dictionary.entrySet();
     Iterator iterator = set.iterator();

@@ -12,7 +12,7 @@ public class PurpleSteps3d {
     // [https://github.com/green-fox-academy/teaching-materials/blob/master/workshop/drawing/purple-steps-3d/r4.png]
     graphics.setColor(Color.WHITE);
     graphics.fillRect(0, 0, WIDTH, HEIGHT);
-    int coord = 5;
+    int coord = 10;
     for (int i = 1; i <= 6; i++) {
       int size = i*10;
       coord += size-10;

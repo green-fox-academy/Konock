@@ -8,16 +8,28 @@ public class JosephusProblem {
     System.out.println("Please enter a number:");
     Scanner scanner = new Scanner(System.in);
     int number = scanner.nextInt();
-    System.out.println(joseph(number));
+    System.out.println("The one standing at place Nr: " + joseph(number) + " will survive.");
   }
+
   static ArrayList<Integer> joseph(int number) {
+    // Fill up ArrayList with 1 to given number
     ArrayList<Integer> bestPlace = new ArrayList<>();
-    for (int i=1; i<number; i++) {
+    for (int i = 1; i <= number; i++) {
       bestPlace.add(i);
     }
+
+    // Program counts until it gets an ArrayList with only one element
     while (bestPlace.size() != 1) {
-      for (int i = 1; i < bestPlace.size(); i += 2) {
+      // Every next element is removed from the list
+      for (int i = 1; i < bestPlace.size(); i++) {
         bestPlace.remove(i);
+        // If counting reaches the last element, it removes the first index
+        // and restarts the counter from zero,
+        // this helps resembling the circle form
+        if (i == bestPlace.size() - 1) {
+          bestPlace.remove(0);
+          i = 0;
+        }
       }
     }
     return bestPlace;
