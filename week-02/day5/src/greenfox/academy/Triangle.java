@@ -11,7 +11,19 @@ public class Triangle {
   public static void mainDraw(Graphics graphics) {
     graphics.setColor(Color.WHITE);
     graphics.fillRect(0, 0, WIDTH, HEIGHT);
+    // Draw outer triangle
+    drawLine(graphics, WIDTH/2, 0, WIDTH, WIDTH);
+    drawLine(graphics, WIDTH/2, 0, 0, WIDTH);
+    drawLine(graphics, 0, WIDTH, WIDTH, WIDTH);
 
+    // Loop for inner horizontal lines
+    for (int i=0; i<WIDTH; i+=20) {
+      int x1 = 0+i;
+      int y1 = WIDTH-i;
+      int x2 = WIDTH-i;
+      int y2 = WIDTH-i;
+      drawLine(graphics, x1, y1, x2, y2);
+    }
 
   }
 
