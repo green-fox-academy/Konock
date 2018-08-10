@@ -7,38 +7,16 @@ import java.awt.*;
 
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
-public class LinePlay {
+public class Triangle {
   public static void mainDraw(Graphics graphics) {
     graphics.setColor(Color.WHITE);
     graphics.fillRect(0, 0, WIDTH, HEIGHT);
-    // Loop for upper part
-    for (int i = 0; i < WIDTH; i += 10) {
-      int x1 = i;
-      int y1 = 0;
-      int x2 = WIDTH;
-      int y2 = i;
-      drawLine(graphics, "purple", x1, y1, x2, y2);
-    }
-    // Loop for bottom part
-    for (int i = 0; i < WIDTH; i += 10) {
-      int x1 = i;
-      int y1 = HEIGHT;
-      int x2 = 0;
-      int y2 = i;
-      drawLine(graphics, "green", x1, y1, x2, y2);
-    }
+
 
   }
 
-  public static Graphics drawLine(Graphics graphics, String color, int x1, int y1, int x2, int y2) {
-    switch (color) {
-      case "purple":
-        graphics.setColor(new Color(186,85,211));
-        break;
-      case "green":
-        graphics.setColor(Color.GREEN);
-        break;
-    }
+  public static Graphics drawLine(Graphics graphics, int x1, int y1, int x2, int y2) {
+        graphics.setColor(Color.BLACK);
     graphics.drawLine(x1, y1, x2, y2);
     return graphics;
   }

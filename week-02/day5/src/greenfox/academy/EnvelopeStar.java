@@ -51,12 +51,6 @@ public class EnvelopeStar {
     return graphics;
   }
 
-  public static Graphics drawHLine(Graphics graphics, int x, int y) {
-    graphics.setColor(Color.GREEN);
-    graphics.drawLine(x, y, x, y);
-    return graphics;
-  }
-
   // Don't touch the code below
   static int WIDTH = 320;
   static int HEIGHT = 343;
