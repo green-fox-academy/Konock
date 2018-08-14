@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,6 +22,7 @@ public class Logs {
       e.printStackTrace();
     }
     System.out.println(uniqueIP(content));
+    System.out.println(ratio(content));
   }
 
   public static List<String> uniqueIP(List<String> content) {
@@ -33,7 +35,18 @@ public class Logs {
     return unique;
   }
 
-  public static int ratio(List<String> content) {
-
+  public static double ratio(List<String> content) {
+    int post = 0;
+    int get = 0;
+    for (int i = 0; i < content.size(); i++) {
+      if (content.get(i).contains("POST")) {
+        post++;
+      } else if (content.get(i).contains("GET")) {
+        get++;
+      }
+    }
+    double ratio = (double) get / post;
+    ratio = Double.parseDouble(new DecimalFormat("##.##").format(ratio));
+    return ratio;
   }
 }
