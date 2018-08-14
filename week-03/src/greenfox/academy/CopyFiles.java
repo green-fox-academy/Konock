@@ -11,7 +11,7 @@ public class CopyFiles {
   // It should take the filenames as parameters
   // It should return a boolean that shows if the copy was successful
   public static void main(String[] args) {
-
+    System.out.println(copy("my-file.txt", "my-file-copied.txt"));
   }
 
   public static boolean copy(String filename1, String filename2) {
