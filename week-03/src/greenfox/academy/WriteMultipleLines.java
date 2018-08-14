@@ -1,5 +1,12 @@
 package greenfox.academy;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
+
 public class WriteMultipleLines {
   // Create a function that takes 3 parameters: a path, a word and a number,
   // than it should write to a file.
@@ -10,10 +17,17 @@ public class WriteMultipleLines {
   // to the file and each line should be "apple"
   // The function should not raise any error if it could not write the file.
   public static void main(String[] args) {
-
+    writeLines("my-file.txt", "apple", 5);
   }
 
   public static void writeLines(String path, String word, int number) {
-
+    Path filePath = Paths.get(path);
+    List<String> words = new ArrayList<>();
+    for (int i=0; i<number; i++)
+      words.add(word);
+    try {
+      Files.write(filePath, words);
+    } catch (IOException e) {
+    }
   }
 }
