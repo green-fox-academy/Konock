@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class TicTacToe {
@@ -12,18 +14,18 @@ public class TicTacToe {
     // open and read it. The file data represents a tic-tac-toe
     // game result. Return 'X'/'O'/'draw' based on which player
     // has winning situation.
-
-    System.out.println(ticTacResult("win-o.txt"));
+    ticTacResult("win-o.txt");
+    // System.out.println(ticTacResult("win-o.txt"));
     // should print O
 
-    System.out.println(ticTacResult("win-x.txt"));
+    // System.out.println(ticTacResult("win-x.txt"));
     // should print X
 
-    System.out.println(ticTacResult("draw.txt"));
+    // System.out.println(ticTacResult("draw.txt"));
     // should print draw
   }
 
-  public static String ticTacResult(String filename) {
+  public static void ticTacResult(String filename) {
     Path path = Paths.get(filename);
     List<String> lines = null;
     try {
@@ -33,19 +35,22 @@ public class TicTacToe {
     }
 
     // Create a matrix
+    ArrayList<ArrayList<String>> matrix = new ArrayList<ArrayList<String>>();
+    for (int i = 0; i < 3; i++) {
+      String[] line = lines.get(i).split("");
+      matrix.add(new ArrayList<String>(Arrays.asList(line)));
+    }
     // Add all rows and columns and diagonals into a String array
+    ArrayList<String> rcd = new ArrayList<String>();
+    for (int i = 0; i < matrix.size(); i++) {
+      for (int j = 0; j < matrix.size(); j++) {
+        rcd.add(matrix.get(i).get(j));
+      }
+
+    }
     // Create for loop for iterating through arrays
     // Check if OOO or XXX appears
 
-    for (int i = 0; i < lines.size(); i++) {
-      String[] line = lines.get(i).split("");
-      if (lines.get(i).equals("OOO") || lines.get(i).startsWith("O") || line[i].equals("O")) {
-        return "O wins";
-      } else if (lines.get(i).equals("XXX") || lines.get(i).startsWith("X") || line[i].equals("X")) {
-        return "X wins";
-      } else {
-        return "Draw";
-      }
-    }
+
   }
 }
