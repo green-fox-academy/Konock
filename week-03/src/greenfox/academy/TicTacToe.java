@@ -31,6 +31,12 @@ public class TicTacToe {
     } catch (IOException e) {
       e.printStackTrace();
     }
+
+    // Create a matrix
+    // Add all rows and columns and diagonals into a String array
+    // Create for loop for iterating through arrays
+    // Check if OOO or XXX appears
+
     for (int i = 0; i < lines.size(); i++) {
       String[] line = lines.get(i).split("");
       if (lines.get(i).equals("OOO") || lines.get(i).startsWith("O") || line[i].equals("O")) {
