@@ -15,8 +15,7 @@ public class DivideByZero {
       int result = 10 / num;
       System.out.println(result);
     } catch (ArithmeticException e) {
-      System.out.println("Can't divide by zero!"); // This line only runs if the input was 0
+      System.out.println("fail"); // This line only runs if the input was 0
     }
-
   }
 }
