@@ -28,9 +28,9 @@ public class Logs {
   public static List<String> uniqueIP(List<String> content) {
     List<String> unique = new ArrayList<>();
     for (int i = 0; i < content.size(); i++) {
-      String[] line = content.get(i).split(" ");
-      if (!unique.contains(line[8]))
-        unique.add(line[8]);
+      String[] line = content.get(i).split("   ");
+      if (!unique.contains(line[1]))
+        unique.add(line[1]);
     }
     return unique;
   }
