@@ -6,9 +6,10 @@ public class NumberAdder {
   }
 
   public static int adder(int n) {
-    if (n == 1) return 1;
-    else
-      System.out.println(n);
-    return adder(n - 1);
+    if (n == 1) {
+      return 1;
+    } else {
+      return (adder(n - 1) + n);
+    }
   }
 }
