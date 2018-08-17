@@ -2,12 +2,10 @@ package greenfox.academy;
 
 public class Weapon {
   String name;
-  int baseAttack;
+  int intBoost;
 
-  Weapon(String name, int baseAttack) {
+  Weapon(String name, int intBoost) {
     this.name = name;
-    this.baseAttack = baseAttack;
+    this.intBoost = intBoost;
   }
-
-  Weapon SolarFlare = new Weapon("Solarflare", 6);
 }
