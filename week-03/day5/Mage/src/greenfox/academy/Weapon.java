@@ -1,11 +1,20 @@
 package greenfox.academy;
 
 public class Weapon {
-  String name;
-  int intBoost;
+  int weaponDamage;
+  int selfHeal;
+  int selfDamage;
 
-  Weapon(String name, int intBoost) {
-    this.name = name;
-    this.intBoost = intBoost;
+
+  public Weapon(int weaponDamage, boolean enchanted, boolean cursed) {
+    this.weaponDamage = weaponDamage;
+    if (enchanted) {
+      this.weaponDamage += 5;
+      selfHeal = 5;
+    }
+    if (cursed) {
+      this.weaponDamage += 5;
+      selfDamage = 10;
+    }
   }
 }
