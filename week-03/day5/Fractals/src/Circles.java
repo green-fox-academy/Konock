@@ -7,7 +7,7 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
 public class Circles {
   public static void mainDraw(Graphics graphics) {
-    int size = 300;
+    int size = 400;
     drawCircles(0, 0, size, graphics);
   }
 
@@ -17,9 +17,13 @@ public class Circles {
   }
 
   public static void drawCircles(int x, int y, int size, Graphics graphics) {
-    drawCircle(0, 0, size, graphics);
-    if (size < 50) ;
-    else drawCircles(x + WIDTH / 3, y + HEIGHT / 3, size - size / 3, graphics);
+    drawCircle(x, y, size, graphics);
+    if (size < 50) {
+    } else {
+      drawCircles(x + size / 4, y, size / 2, graphics);
+      drawCircles(x + 3, y + size / 3, size / 2, graphics);
+      drawCircles(x + size / 2, y + size / 3, size / 2, graphics);
+    }
   }
 
   // Don't touch the code below
