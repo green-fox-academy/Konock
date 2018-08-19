@@ -12,28 +12,29 @@ public class Carpet {
   }
 
   public static Graphics drawSquare(int x, int y, int size, Graphics graphics) {
-    graphics.drawRect(x, y, size, size);
+    graphics.setColor(Color.BLACK);
+    graphics.fillRect(x, y, size, size);
     return graphics;
   }
 
   public static void drawCarpet(int x, int y, int size, Graphics graphics) {
     drawSquare(x, y, size, graphics);
-    if (size < 50) {
+    if (size < 5) {
     } else {
-      drawCarpet(x - size, y - size, size / 2, graphics);
-      drawCarpet(x + size / 2, y - size, size / 2, graphics);
-      drawCarpet(x + size, y - size, size / 2, graphics);
-      // drawCarpet(x + size / 4, y, size / 2, graphics);
-      // drawCarpet(x + size / 4, y, size / 2, graphics);
-      // drawCarpet(x + size / 4, y, size / 2, graphics);
-      // drawCarpet(x + size / 4, y, size / 2, graphics);
-      // drawCarpet(x + size / 4, y, size / 2, graphics);
+      drawCarpet(x - size/2, y - size/2, size / 4, graphics);
+      drawCarpet(x + size/3, y - size/2, size / 4, graphics);
+      drawCarpet(x + size + size/4, y - size/2, size / 4, graphics);
+      drawCarpet(x - size/2, y + size + size/2, size / 4, graphics);
+      drawCarpet(x + size/3, y + size + size/2, size / 4, graphics);
+      drawCarpet(x + size + size/4, y + size + size/2, size / 4, graphics);
+      drawCarpet(x - size / 2, y + size/2, size / 4, graphics);
+      drawCarpet(x + size + size/4, y + size/2, size / 4, graphics);
     }
   }
 
   // Don't touch the code below
-  static int WIDTH = 320;
-  static int HEIGHT = 343;
+  static int WIDTH = 640;
+  static int HEIGHT = 663;
 
   public static void main(String[] args) {
     JFrame jFrame = new JFrame("Drawing");
