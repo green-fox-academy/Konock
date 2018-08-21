@@ -3,7 +3,6 @@ package greenfox.academy;
 import java.util.ArrayList;
 
 public class Garden {
-  private String name;
   public ArrayList<Plant> plants = new ArrayList<>();
 
   public void addPlant(Plant plant) {
@@ -20,12 +19,12 @@ public class Garden {
   }
 
   public void waterGarden(int water) {
-    int toWater = 0;
+    int toWater = water/plants.size();
     for (Plant plant : plants) {
       if (plant instanceof Flower)
-        ((Flower)plant).water(plant, water);
+        ((Flower)plant).water(plant, toWater);
       else
-        ((Tree)plant).water(plant, water);
+        ((Tree)plant).water(plant, toWater);
     }
   }
 }
