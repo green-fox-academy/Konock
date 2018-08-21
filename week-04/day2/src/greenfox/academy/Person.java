@@ -3,10 +3,10 @@ package greenfox.academy;
 public class Person {
   private String name;
   private int age;
-  private String gender = "male";
+  private String gender;
 
   public void introduce() {
-    System.out.println("Hi, I'm " + name + " , a " + age + " year old " + gender + ".");
+    System.out.println("Hi, I'm " + name + ", a " + age + " year old " + gender + ".");
   }
 
   public void getGoal() {
