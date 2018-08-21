@@ -4,27 +4,28 @@ import java.util.ArrayList;
 
 public class Garden {
   private String name;
-  private int waterAmount;
-  private boolean needsWater;
+  public ArrayList<Plant> plants = new ArrayList<>();
 
-  public Garden(String name) {
-    this.name = name;
-    waterAmount = 0;
-    needsWater = true;
-  }
-
-  public void addPlant(ArrayList<Garden> plants, Garden plant) {
-    plants = new ArrayList<>();
+  public void addPlant(Plant plant) {
     plants.add(plant);
   }
 
-  public void water(ArrayList<Garden> plants, int water) {
+  public void gardenStatus() {
+    for (Plant plant : plants) {
+      if (plant instanceof Flower)
+        ((Flower)plant).checkStatus(plant);
+      else
+        ((Tree)plant).checkStatus(plant);
+    }
+  }
+
+  public void waterGarden(int water) {
     int toWater = 0;
-    for (Garden plant : plants) {
-      if (plant.needsWater)
-        toWater++;
-      if (plant.needsWater)
-        plant.waterAmount += water / toWater;
+    for (Plant plant : plants) {
+      if (plant instanceof Flower)
+        ((Flower)plant).water(plant, water);
+      else
+        ((Tree)plant).water(plant, water);
     }
   }
 }
