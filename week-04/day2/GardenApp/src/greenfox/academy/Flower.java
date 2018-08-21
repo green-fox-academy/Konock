@@ -6,16 +6,16 @@ public class Flower extends Plant{
   }
 
   public void checkStatus(Plant flower) {
-    if (super.getWaterAmount() < 5)
-      System.out.println("The " + super.getName() + " Flower needs water");
+    if (flower.getWaterAmount() < 5)
+      System.out.println("The " + flower.getName() + " Flower needs water");
     else
-      System.out.println("The " + super.getName() + " Flower does not need water");
+      System.out.println("The " + flower.getName() + " Flower does not need water");
   }
 
   public void water(Plant flower, int water) {
-    double waterSum = super.getWaterAmount() + water*0.75;
-    super.setWaterAmount(waterSum);
-    if (super.getWaterAmount() > 5)
-      super.setNeedsWater(false);
+    double waterSum = flower.getWaterAmount() + water*0.75;
+    flower.setWaterAmount(waterSum);
+    if (flower.getWaterAmount() > 5)
+      flower.setNeedsWater(false);
   }
 }
