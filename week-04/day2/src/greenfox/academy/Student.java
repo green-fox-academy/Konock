@@ -17,16 +17,13 @@ public class Student extends Person {
   }
 
   Student(String name, int age, String gender, String previousOrganization) {
-    super.setName(name);
-    super.setAge(age);
+    super(name, age, gender);
     this.previousOrganization = previousOrganization;
     skippedDays = 0;
   }
 
   Student() {
-    super.setName("Jane Doe");
-    super.setAge(30);
-    super.setGender("female");
+    super("Jane Doe", 30, "female");
     previousOrganization = "The School of Life";
     skippedDays = 0;
   }
