@@ -19,7 +19,7 @@ public class Carpet {
 
   public static void drawCarpet(int x, int y, int size, Graphics graphics) {
     drawSquare(x, y, size, graphics);
-    if (size < 5) {
+    if (size < 1) {
     } else {
       drawCarpet(x - size/2, y - size/2, size / 4, graphics);
       drawCarpet(x + size/3, y - size/2, size / 4, graphics);
