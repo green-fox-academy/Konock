@@ -22,7 +22,6 @@ public class CountLettersTest {
   public void doesItContainAllLetters() {
     CountLetters word = new CountLetters("doggy");
     assertEquals(4, word.countLetters().size());
-
   }
 
   @Test
