@@ -10,14 +10,14 @@ public class CountLetters {
   }
 
   public HashMap countLetters() {
-    HashMap dic = new HashMap();
+    HashMap dic = new HashMap<>();
     String[] letters = this.word.split("");
-    int occurrence = 0;
+    int occurrence = 1;
     for (String letter : letters) {
       if (!dic.containsKey(letter))
-        dic.put(letter, occurrence+1);
+        dic.put(letter, occurrence);
       else if (dic.containsKey(letter))
-        dic.put(letter, dic.get(occurrence++));
+        dic.put(letter, occurrence+1);
     }
     return dic;
   }

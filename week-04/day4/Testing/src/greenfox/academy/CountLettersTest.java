@@ -19,10 +19,17 @@ public class CountLettersTest {
   }
 
   @Test
+  public void doesItContainAllLetters() {
+    CountLetters word = new CountLetters("doggy");
+    assertEquals(4, word.countLetters().size());
+
+  }
+
+  @Test
   public void doesItCountMultipleLetters() {
     CountLetters word = new CountLetters("doggy");
     HashMap keys = word.countLetters();
-    System.out.println(keys);
+    assertEquals(2, keys.get("g"));
   }
 
 }
