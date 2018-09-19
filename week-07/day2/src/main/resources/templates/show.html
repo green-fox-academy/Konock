@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Bank Accounts</title>
+    <link rel="stylesheet" th:href="@{/style.css}" />
+    <meta charset="utf-8" />
+</head>
+<body>
+    <img th:src="@{/simbank.jpg}">
+    <h1>SimBank</h1>
+    <h2>List of Accounts</h2>
+    <table>
+        <thead>
+        <tr>
+            <th></th>
+            <th>Name</th>
+            <th>Balance</th>
+            <th>Type of Animal</th>
+            <th>Hierarchy</th>
+            <th>Nature</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="account : ${accounts}">
+            <td th:text="${accountStat.index}"></td>
+            <td th:text="${account.name}" th:style="${account.ownerKing}? 'color: red; text-transform: capitalize;' : ''"></td>
+            <td th:text="${#numbers.formatDecimal(account.balance, 0, 'WHITESPACE', 2, 'POINT') + ' Zebras'}"></td>
+            <td th:text="${account.animalType}"></td>
+            <td><img th:src="${account.ownerKing}? '/crown.png' : ''"></td>
+            <td th:text="${account.goodGuy}? 'Good Guy' : 'Bad Guy'"></td>
+            <td>
+                <form action="#" th:action="@{'/accounts/' + ${accountStat.index}}" method="post">
+                    <input type="submit" value="Add Zebras" />
+                </form>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</body>
+</html>
