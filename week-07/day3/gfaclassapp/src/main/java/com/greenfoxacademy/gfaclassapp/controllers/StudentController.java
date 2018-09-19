@@ -5,6 +5,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class StudentController {
@@ -15,15 +18,26 @@ public class StudentController {
     this.studentService = studentService;
   }
 
-  @GetMapping("/gfa")
+  @GetMapping("")
   public String mainPage() {
     return "index";
   }
 
-  @GetMapping("/gfa/list")
+  @GetMapping("/list")
   public String listAllStudents(Model model) {
     model.addAttribute("students", studentService.findAll());
     return "list";
+  }
+
+  @GetMapping("/add")
+  public String addStudent() {
+    return "add";
+  }
+
+  @PostMapping("/save")
+  public String addStudent(@ModelAttribute(value = "student-name") String name) {
+    studentService.save(name);
+    return "redirect:/list";
   }
 
 }
