@@ -19,7 +19,8 @@ public class StudentController {
   }
 
   @GetMapping("")
-  public String mainPage() {
+  public String mainPage(Model model) {
+    model.addAttribute("studentCount", studentService.count());
     return "index";
   }
 
