@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Green Fox Academy Class App</title>
+</head>
+<body>
+<h2>Check if a student is present in our database:</h2>
+<form action="#" th:action="@{/checkstudent/}" method="get">
+    <label for="student-name">Student's name: </label>
+    <input type="text" id="student-name" name="student-name">
+    <input type="submit" value="Check student">
+</form>
+<br>
+<p th:text="${ifPresent}? 'This student is already in our database' : 'This student is not yet in our database'"></p>
+<br>
+<a href="/">Go back</a>
+<a th:style="${ifPresent}? 'visibility: hidden;' : ''" href="/add">Add student</a>
+</body>
+</html>

@@ -27,4 +27,8 @@ public class StudentService {
   public int count() {
     return names.size();
   }
+
+  public boolean checkIfPresent(String name) {
+    return names.contains(name);
+  }
 }

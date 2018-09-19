@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Green Fox Academy Class App</title>
+</head>
+<body>
+<h2>Check if a student is present in our database:</h2>
+<form action="#" th:action="@{/checkstudent/}" method="get">
+    <label for="student-name">Student's name: </label>
+    <input type="text" id="student-name" name="student-name">
+    <input type="submit" value="Check student">
+</form>
+<br>
+<a href="/">Go back</a>
+</body>
+</html>
