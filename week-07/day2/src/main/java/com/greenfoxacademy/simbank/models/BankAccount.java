@@ -9,7 +9,9 @@ public class BankAccount {
 
   public BankAccount() {
     new BankAccount(null, 0, null, false);
+    goodGuy = true;
   }
+
 
   public BankAccount(String name, int balance, String animalType, boolean ownerIsKing) {
     this.name = name;

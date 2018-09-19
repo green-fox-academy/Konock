@@ -37,5 +37,14 @@
         </tr>
         </tbody>
     </table>
+    <form th:object="${account}" action="#" th:action="@{/accounts/}" method="post">
+        <label for="owner-name">Name: </label>
+        <input type="text" id="owner-name" th:field="*{name}">
+        <label for="balance">Starting Balance: </label>
+        <input type="text" id="balance" th:field="*{balance}">
+        <label for="animal-type">Type of Animal: </label>
+        <input type="text" id="animal-type" th:field="*{animalType}">
+        <input type="submit" value="Add Account" />
+    </form>
 </body>
 </html>
