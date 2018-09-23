@@ -1,7 +1,10 @@
 package com.greenfoxacademy.foxygochi.models;
 
+import org.springframework.stereotype.Repository;
+
 import java.util.ArrayList;
 
+@Repository
 public class FoxHorde {
   private ArrayList<Fox> foxHorde;
 
@@ -21,3 +24,4 @@ public class FoxHorde {
     return null;
   }
 }
+
