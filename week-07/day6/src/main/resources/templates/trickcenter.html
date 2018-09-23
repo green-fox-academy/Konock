@@ -10,12 +10,14 @@
     <li><a th:href="@{'/nutritionStore/?name=' + ${fox.name}}">Nutrition Store</a></li>
     <li><a th:href="@{'/trickcenter/?name=' + ${fox.name}}">Trick Center</a></li>
 </ul>
-<img th:src="@{/greenfox.png}">
-<p th:text="'This is ' + ${fox.name} + ', currently living on ' + ${fox.food} + ' and ' + ${fox.drink} + '. It knows ' + ${fox.getTricks().size()} + ' tricks.'"></p>
-<h1>Known tricks</h1>
-<p th:text="${fox.getTricks().size() == 0}? 'This fox does not know any tricks yet.' : ''"></p>
-<ul>
-    <li th:each="trick : ${fox.getTricks()}" th:text="${trick}"></li>
-</ul>
+<form action="/trickcenter/" method="post">
+    <input type="hidden" name="name" th:value="${fox.name}"/>
+    <label for="trick">Tricks: </label>
+    <select name="trick" id="trick">
+        <option th:each="trick : ${trickOptions}" th:value="${trick}"
+                th:text="${trick}"></option>
+    </select>
+    <input type="submit" value="Learn">
+</form>
 </body>
 </html>

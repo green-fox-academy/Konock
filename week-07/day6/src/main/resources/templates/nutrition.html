@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Foxygochi</title>
+</head>
+<body>
+<ul>
+    <li><a th:href="@{'/?name=' + ${fox.name}}">Information</a></li>
+    <li><a th:href="@{'/nutritionStore/?name=' + ${fox.name}}">Nutrition Store</a></li>
+    <li><a th:href="@{'/trickcenter/?name=' + ${fox.name}}">Trick Center</a></li>
+</ul>
+<form action="/nutritionStore/" method="post">
+    <input type="hidden" name="name" th:value="${fox.name}"/>
+    <label for="food">Food: </label>
+    <select name="food" id="food">
+        <option th:each="food : ${foodOptions}" th:value="${food}"
+                th:text="${food}"></option>
+    </select>
+    <label for="drink">Drink: </label>
+    <select name="drink" id="drink">
+        <option th:each="drink : ${drinkOptions}" th:value="${drink}"
+                th:text="${drink}"></option>
+    </select>
+    <input type="submit" value="Change">
+</form>
+</body>
+</html>

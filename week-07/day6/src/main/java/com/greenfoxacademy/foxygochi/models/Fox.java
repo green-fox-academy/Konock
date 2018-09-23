@@ -9,23 +9,21 @@ public class Fox {
   private ArrayList<String> tricks;
 
   public Fox() {
+    food = "pizza";
+    drink = "lemonade";
     tricks = new ArrayList<>();
   }
 
   public Fox(String name) {
     this.name = name;
-    tricks = new ArrayList<>();
-  }
-
-  public Fox(String name, String food, String drink) {
-    this.name = name;
-    this.food = food;
-    this.drink = drink;
+    food = "pizza";
+    drink = "lemonade";
     tricks = new ArrayList<>();
   }
 
   public void addTrick(String trick) {
-    tricks.add(trick);
+    if (!tricks.contains(trick))
+      tricks.add(trick);
   }
 
   public String getFood() {
