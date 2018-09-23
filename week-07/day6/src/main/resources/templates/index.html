@@ -9,9 +9,9 @@
     <li><a href="#">Information</a></li>
 </ul>
 <img src="greenfox.png">
-<p th:text="'This is ' + ${fox.name} + '. Currently he is living on ' + ${fox.getFood()} + ' and ' + ${fox.getDrink()} + '. He knows ' + ${fox.getTricks().size()} + ' tricks.'"></p>
+<p th:text="'This is ' + ${fox.name} + '. Currently he is living on ' + ${fox.getFood()} + ' and ' + ${fox.getDrink()} + '. It knows ' + ${fox.getTricks().size()} + ' tricks.'"></p>
 <h1>Known tricks</h1>
-<p th:text="${fox.getTricks() == 0}? 'This fox does not know any tricks yet.' : ''"></p>
+<p th:text="${fox.getTricks().size() == 0}? 'This fox does not know any tricks yet.' : ''"></p>
 <ul>
     <li th:each="trick : ${fox.getTricks()}" th:text="${trick}"></li>
 </ul>

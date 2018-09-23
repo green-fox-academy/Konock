@@ -4,10 +4,7 @@ import com.greenfoxacademy.foxygochi.models.Fox;
 import com.greenfoxacademy.foxygochi.services.FoxService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class MainController {
@@ -17,7 +14,7 @@ public class MainController {
     this.foxService = foxService;
   }
 
-  @GetMapping("/")
+  @RequestMapping("/")
   public String showIndex(Model model, @RequestParam(value="name") String name) {
     model.addAttribute("fox", foxService.foxes.getFoxByName(name));
     return "index";
@@ -35,7 +32,7 @@ public class MainController {
     else if (foxService.foxes.getFoxByName(name) == null)
       return "redirect:/register";
     else
-      return "redirect:/{name}";
+      return "forward:/";
   }
 
   @GetMapping("/register")
