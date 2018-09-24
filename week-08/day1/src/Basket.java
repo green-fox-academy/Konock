@@ -8,13 +8,19 @@ public class Basket {
     books = new HashMap<>();
   }
 
-  public int calculate() {
-    int sum = 0;
-    if (books.size() == 0)
+  public double calculate() {
+    double sum = 0;
+    if (books.size() == 0) {
       return 0;
-    else if (books.size() == 1)
+    } else if (books.size() == 1) {
       for (Integer book : books.values())
         sum += book * 8;
+      return sum;
+    } else if (books.size() == 2) {
+      for (Integer book : books.values())
+        sum += book * 8 * 0.95;
+      return sum;
+    }
     return sum;
   }
 }

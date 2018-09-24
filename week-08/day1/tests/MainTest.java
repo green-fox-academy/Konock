@@ -21,4 +21,11 @@ public class MainTest {
     basket.books.put(2, 2);
     Assert.assertEquals(16, basket.calculate());
   }
+
+  @Test
+  public void getADiscountWithTwoDifferentVolumesTest() {
+    basket.books.put(1, 1);
+    basket.books.put(2, 1);
+    Assert.assertEquals(2 * 8 * 0.95, basket.calculate(),0);
+  }
 }
