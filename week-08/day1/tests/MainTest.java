@@ -7,19 +7,19 @@ public class MainTest {
   @Test
   public void emptyBasketTest() {
 
-    Assert.assertEquals(0, basket.calculate());
+    Assert.assertEquals(0, basket.calculateDiscountPrice());
   }
 
   @Test
   public void singleVolumePriceTest() {
     basket.books.put(1, 1);
-    Assert.assertEquals(8, basket.calculate());
+    Assert.assertEquals(8, basket.calculateDiscountPrice());
   }
 
   @Test
   public void moreInstancesOfSameVolumeTest() {
     basket.books.put(2, 2);
-    Assert.assertEquals(16, basket.calculate());
+    Assert.assertEquals(16, basket.calculateDiscountPrice());
   }
 
   @Test
@@ -29,7 +29,7 @@ public class MainTest {
     basket.books.put(3, 1);
     basket.books.put(4, 1);
     basket.books.put(5, 1);
-    Assert.assertEquals(5 * 8 * 0.75, basket.calculate(), 0);
+    Assert.assertEquals(5 * 8 * 0.75, basket.calculateDiscountPrice(), 0);
   }
 
 

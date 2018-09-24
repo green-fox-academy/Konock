@@ -20,7 +20,12 @@ public class Basket {
     if (books.size() == 5) {
       for (Integer book : books.values())
         discount += book * 2;
+      for (Integer bookTitle: books.keySet()) {
+        if (books.get(bookTitle) > 0)
+          books.put(bookTitle, books.get(bookTitle)-1);
+      }
     }
+    removeZeroValues();
     return discount;
   }
 
@@ -53,5 +58,9 @@ public class Basket {
 
   public double calculateDiscountPrice() {
     return calculateFullPrice() - calculate5SetDiscount() - calculate4SetDiscount() - calculate3SetDiscount() - calculate2SetDiscount();
+  }
+
+  public void removeZeroValues() {
+    books.values().remove(0);
   }
 }
