@@ -1,13 +1,17 @@
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Basket {
+  Map<Book, Integer> books;
 
   public Basket() {
-    List<Book> books = new ArrayList<Book>();
+    books = new HashMap<>();
   }
 
   public int calculate() {
-    return 0;
+    if (books.size() == 0)
+      return 0;
+    else
+      return 0;
   }
 }
