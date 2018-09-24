@@ -2,7 +2,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Basket {
-  Map<Book, Integer> books;
+  Map<Integer, Integer> books;
 
   public Basket() {
     books = new HashMap<>();
@@ -12,6 +12,6 @@ public class Basket {
     if (books.size() == 0)
       return 0;
     else
-      return 0;
+      return books.size() * 8;
   }
 }
