@@ -17,41 +17,55 @@ public class Basket {
 
   public double calculate5SetDiscount() {
     double discount = 0;
-    if (books.size() == 5) {
-      for (Integer book : books.values())
-        discount += book * 2;
-      for (Integer bookTitle: books.keySet()) {
+    while (books.size() == 5) {
+      discount += 10;
+      for (Integer bookTitle : books.keySet()) {
         if (books.get(bookTitle) > 0)
-          books.put(bookTitle, books.get(bookTitle)-1);
+          books.put(bookTitle, books.get(bookTitle) - 1);
+
       }
+      removeZeroValues();
     }
-    removeZeroValues();
+
     return discount;
   }
 
   public double calculate4SetDiscount() {
     double discount = 0;
-    if (books.size() == 4) {
-      for (Integer book : books.values())
-        discount += book * 1.6;
+    while (books.size() == 4) {
+      discount += 6.4;
+      for (Integer bookTitle : books.keySet()) {
+        if (books.get(bookTitle) > 0)
+          books.put(bookTitle, books.get(bookTitle) - 1);
+      }
+      removeZeroValues();
     }
     return discount;
   }
 
   public double calculate3SetDiscount() {
     double discount = 0;
-    if (books.size() == 3) {
-      for (Integer book : books.values())
-        discount += book * 0.8;
+    while (books.size() == 3) {
+      discount += 2.4;
+      for (Integer bookTitle : books.keySet()) {
+        if (books.get(bookTitle) > 0)
+          books.put(bookTitle, books.get(bookTitle) - 1);
+      }
+
+      removeZeroValues();
     }
     return discount;
   }
 
   public double calculate2SetDiscount() {
     double discount = 0;
-    if (books.size() == 2) {
-      for (Integer book : books.values())
-        discount += book * 0.4;
+    while (books.size() == 2) {
+      discount += 0.8;
+      for (Integer bookTitle : books.keySet()) {
+        if (books.get(bookTitle) > 0)
+          books.put(bookTitle, books.get(bookTitle) - 1);
+      }
+      removeZeroValues();
     }
     return discount;
   }
@@ -61,6 +75,6 @@ public class Basket {
   }
 
   public void removeZeroValues() {
-    books.values().remove(0);
+    while(books.values().remove(0));
   }
 }

@@ -32,5 +32,14 @@ public class MainTest {
     Assert.assertEquals(5 * 8 * 0.75, basket.calculateDiscountPrice(), 0);
   }
 
+  @Test
+  public void getAnIncorrectDiscountWithMultipleDifferentVolumesTest() {
+    basket.books.put(1, 2);
+    basket.books.put(2, 2);
+    basket.books.put(3, 2);
+    basket.books.put(4, 1);
+    basket.books.put(5, 1);
+    Assert.assertEquals(51.6, basket.calculateDiscountPrice(), 0);
+  }
 
 }
