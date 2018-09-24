@@ -8,19 +8,50 @@ public class Basket {
     books = new HashMap<>();
   }
 
-  public double calculate() {
+  public double calculateFullPrice() {
     double sum = 0;
-    if (books.size() == 0) {
-      return 0;
-    } else if (books.size() == 1) {
-      for (Integer book : books.values())
-        sum += book * 8;
-      return sum;
-    } else if (books.size() == 2) {
-      for (Integer book : books.values())
-        sum += book * 8 * 0.95;
-      return sum;
-    }
+    for (int book : books.values())
+      sum += book * 8;
     return sum;
+  }
+
+  public double calculate5SetDiscount() {
+    double discount = 0;
+    if (books.size() == 5) {
+      for (Integer book : books.values())
+        discount += book * 2;
+    }
+    return discount;
+  }
+
+  public double calculate4SetDiscount() {
+    double discount = 0;
+    if (books.size() == 4) {
+      for (Integer book : books.values())
+        discount += book * 1.6;
+    }
+    return discount;
+  }
+
+  public double calculate3SetDiscount() {
+    double discount = 0;
+    if (books.size() == 3) {
+      for (Integer book : books.values())
+        discount += book * 0.8;
+    }
+    return discount;
+  }
+
+  public double calculate2SetDiscount() {
+    double discount = 0;
+    if (books.size() == 2) {
+      for (Integer book : books.values())
+        discount += book * 0.4;
+    }
+    return discount;
+  }
+
+  public double calculateDiscountPrice() {
+    return calculateFullPrice() - calculate5SetDiscount() - calculate4SetDiscount() - calculate3SetDiscount() - calculate2SetDiscount();
   }
 }

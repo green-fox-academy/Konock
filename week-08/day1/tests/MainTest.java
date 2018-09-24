@@ -26,6 +26,11 @@ public class MainTest {
   public void getADiscountWithTwoDifferentVolumesTest() {
     basket.books.put(1, 1);
     basket.books.put(2, 1);
-    Assert.assertEquals(2 * 8 * 0.95, basket.calculate(),0);
+    basket.books.put(3, 1);
+    basket.books.put(4, 1);
+    basket.books.put(5, 1);
+    Assert.assertEquals(5 * 8 * 0.75, basket.calculate(), 0);
   }
+
+
 }
