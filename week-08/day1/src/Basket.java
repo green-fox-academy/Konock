@@ -9,9 +9,12 @@ public class Basket {
   }
 
   public int calculate() {
+    int sum = 0;
     if (books.size() == 0)
       return 0;
-    else
-      return books.size() * 8;
+    else if (books.size() == 1)
+      for (Integer book : books.values())
+        sum += book * 8;
+    return sum;
   }
 }

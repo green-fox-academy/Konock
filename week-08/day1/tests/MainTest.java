@@ -15,4 +15,10 @@ public class MainTest {
     basket.books.put(1, 1);
     Assert.assertEquals(8, basket.calculate());
   }
+
+  @Test
+  public void moreInstancesOfSameVolumeTest() {
+    basket.books.put(2, 2);
+    Assert.assertEquals(16, basket.calculate());
+  }
 }
