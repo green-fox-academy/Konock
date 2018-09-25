@@ -71,6 +71,10 @@ public class Basket {
   }
 
   public double calculateDiscountPrice() {
+    if (books.values().contains(1))
+    {
+
+    }
     return calculateFullPrice() - calculate5SetDiscount() - calculate4SetDiscount() - calculate3SetDiscount() - calculate2SetDiscount();
   }
 
