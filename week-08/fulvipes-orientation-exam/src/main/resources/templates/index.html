@@ -8,12 +8,15 @@
 <h1>Matrix Checker</h1>
 <p>Check if your matrix is increasing!</p>
 <p>Enter a matrix and sit back while the evaluation happens.</p>
-<form action="/" method="post">
-    <label for="matrix">Enter your matrix:</label>
-    <input type="text" id="matrix" name="matrix">
+<form action="/matrix" method="post">
+    <label for="matrixNumbers">Enter your matrix:</label>
+    <input type="text" id="matrixNumbers" name="matrixNumbers" style="width:200px;height:150px;">
     <input type="submit" value="Submit">
 </form>
-<h2>Result: </h2>
-<p></p>
+<div th:if="${matrix.getMatrixNumbers() != null}">
+    <h2>Result: </h2>
+    <p th:text="${isSquare}? '' : 'Your matrix is not a square!'"></p>
+    <p th:text="${isIncreasing}? 'Your matrix is increasing! Yeeey!' : 'Your matrix is not increasing! Please try again.'"></p>
+</div>
 </body>
 </html>
