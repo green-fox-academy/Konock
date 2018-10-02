@@ -57,4 +57,13 @@ public class GuardianControllerTest {
         .andExpect(jsonPath("$.speed", is(10.0)))
         .andDo(print());
   }
+
+  @Test
+  public void yonduShouldReturnError_when_noInputsGiven() throws Exception {
+    mockMvc.perform(get("/yondu"))
+        .andExpect(status().isBadRequest())
+        .andExpect(content().contentType(contentType))
+        .andExpect(jsonPath("$.error", is("Please provide both time and distance!")))
+        .andDo(print());
+  }
 }
