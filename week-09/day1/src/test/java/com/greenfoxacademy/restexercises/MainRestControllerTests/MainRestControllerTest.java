@@ -50,7 +50,7 @@ public class MainRestControllerTest {
   }
 
   @Test
-  public void doublingShouldReturnError_when_noInput() throws Exception {
+  public void doublingShouldReturnError_when_noInputIsGiven() throws Exception {
 
     mockMvc.perform(get("/doubling"))
         .andExpect(status().isNotAcceptable())
@@ -60,7 +60,7 @@ public class MainRestControllerTest {
   }
 
   @Test
-  public void greeterShouldGreat_when_NameAndTitleIsGiven() throws Exception {
+  public void greeterShouldReturnGreeting_when_NameAndTitleIsGiven() throws Exception {
     String name = "Petike";
     String title = "student";
 
@@ -68,6 +68,17 @@ public class MainRestControllerTest {
         .andExpect(status().isCreated())
         .andExpect(content().contentType(contentType))
         .andExpect(jsonPath("$.welcome_message", is("Oh, hi there " + name + ", my dear " + title + "!")))
+        .andDo(print());
+  }
+
+  @Test
+  public void greeterShouldReturnError_when_noNameIsGiven() throws Exception {
+    String title = "student";
+
+    mockMvc.perform(get("/greeter?title=" + title))
+        .andExpect(status().isNotAcceptable())
+        .andExpect(content().contentType(contentType))
+        .andExpect(jsonPath("$.error", is("Please provide a name!")))
         .andDo(print());
   }
 
