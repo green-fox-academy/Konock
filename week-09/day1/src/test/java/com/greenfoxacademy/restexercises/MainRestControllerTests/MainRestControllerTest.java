@@ -49,4 +49,14 @@ public class MainRestControllerTest {
         .andDo(print());
   }
 
+  @Test
+  public void doublingShouldReturnError_when_noInput() throws Exception {
+
+    mockMvc.perform(get("/doubling"))
+        .andExpect(status().isNotAcceptable())
+        .andExpect(content().contentType(contentType))
+        .andExpect(jsonPath("$.error", is("Please provide an input!")))
+        .andDo(print());
+  }
+
 }
