@@ -45,4 +45,16 @@ public class GuardianControllerTest {
         .andExpect(jsonPath("$.error", is("I am Groot!")))
         .andDo(print());
   }
+
+  @Test
+  public void yonduShouldReturnSpeed_when_TimeAndDistanceIsGiven() throws Exception {
+    Double time = 100.0;
+    Double distance = 10.0;
+
+    mockMvc.perform(get("/yondu?time=" + time + "&distance=" + distance))
+        .andExpect(status().isOk())
+        .andExpect(content().contentType(contentType))
+        .andExpect(jsonPath("$.speed", is(10.0)))
+        .andDo(print());
+  }
 }
