@@ -42,7 +42,7 @@ public class MainRestControllerTest {
     int result = 30;
 
     mockMvc.perform(get("/doubling?input=" + input))
-        .andExpect(status().isOk())
+        .andExpect(status().isCreated())
         .andExpect(content().contentType(contentType))
         .andExpect(jsonPath("$.received", is(input)))
         .andExpect(jsonPath("$.result", is(result)))
@@ -56,6 +56,18 @@ public class MainRestControllerTest {
         .andExpect(status().isNotAcceptable())
         .andExpect(content().contentType(contentType))
         .andExpect(jsonPath("$.error", is("Please provide an input!")))
+        .andDo(print());
+  }
+
+  @Test
+  public void greeterShouldGreat_when_NameAndTitleIsGiven() throws Exception {
+    String name = "Petike";
+    String title = "student";
+
+    mockMvc.perform(get("/greeter?name=" + name + "&title=" + title))
+        .andExpect(status().isCreated())
+        .andExpect(content().contentType(contentType))
+        .andExpect(jsonPath("$.welcome_message", is("Oh, hi there " + name + ", my dear " + title + "!")))
         .andDo(print());
   }
 
