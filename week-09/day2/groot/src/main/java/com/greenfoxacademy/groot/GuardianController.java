@@ -10,13 +10,13 @@ import org.springframework.web.bind.annotation.RestController;
 public class GuardianController {
 
   @GetMapping("/groot")
-  public ResponseEntity<?> grootTranslator(@RequestParam(value="message") String somemessage) {
-    if (somemessage.equals("somemessage")) {
-      GrootTranslator grootTranslator = new GrootTranslator(somemessage);
-      return ResponseEntity.ok().body(grootTranslator);
-    } else {
+  public ResponseEntity<?> grootTranslator(@RequestParam(value = "message", required = false) String message) {
+    if (message == null) {
       ErrorMessage errorMessage = new ErrorMessage("I am Groot!");
       return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errorMessage);
+    } else {
+      GrootTranslator grootTranslator = new GrootTranslator(message);
+      return ResponseEntity.status(HttpStatus.OK).body(grootTranslator);
     }
   }
 }

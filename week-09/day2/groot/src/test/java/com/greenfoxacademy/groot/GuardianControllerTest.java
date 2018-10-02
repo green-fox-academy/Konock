@@ -36,4 +36,13 @@ public class GuardianControllerTest {
         .andExpect(jsonPath("$.translated", is("I am Groot!")))
         .andDo(print());
   }
+
+  @Test
+  public void grootShouldReturnError_when_inputIsNotGiven() throws Exception {
+    mockMvc.perform(get("/groot"))
+        .andExpect(status().isBadRequest())
+        .andExpect(content().contentType(contentType))
+        .andExpect(jsonPath("$.error", is("I am Groot!")))
+        .andDo(print());
+  }
 }
