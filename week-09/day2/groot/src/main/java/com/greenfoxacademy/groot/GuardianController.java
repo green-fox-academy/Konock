@@ -19,4 +19,15 @@ public class GuardianController {
       return ResponseEntity.status(HttpStatus.OK).body(grootTranslator);
     }
   }
+
+  @GetMapping("/yondu")
+  public ResponseEntity<?> yonduArrow(@RequestParam(value = "time", required = false) Double time, @RequestParam(value = "distance", required = false) Double distance) {
+    if (time == null && distance == null) {
+      ErrorMessage errorMessage = new ErrorMessage("Please provide both time and distance!");
+      return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errorMessage);
+    } else {
+      Arrow arrow = new Arrow(time, distance);
+      return ResponseEntity.ok().body(arrow);
+    }
+  }
 }
