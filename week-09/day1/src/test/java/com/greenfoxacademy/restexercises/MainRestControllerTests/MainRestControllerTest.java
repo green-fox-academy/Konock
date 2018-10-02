@@ -82,4 +82,15 @@ public class MainRestControllerTest {
         .andDo(print());
   }
 
+  @Test
+  public void greeterShouldReturnError_when_noTitleIsGiven() throws Exception {
+    String name = "Petike";
+
+    mockMvc.perform(get("/greeter?name=" + name))
+        .andExpect(status().isNotAcceptable())
+        .andExpect(content().contentType(contentType))
+        .andExpect(jsonPath("$.error", is("Please provide a title!")))
+        .andDo(print());
+  }
+
 }
