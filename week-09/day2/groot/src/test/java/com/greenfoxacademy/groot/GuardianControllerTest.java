@@ -28,6 +28,12 @@ public class GuardianControllerTest {
 
   @Test
   public void grootShouldReturnIAmGroot_when_inputIsSomemessage() throws Exception {
+    String input = "somemessage";
 
+    mockMvc.perform(get("/groot?message=" + input))
+        .andExpect(status().isOk())
+        .andExpect(content().contentType(contentType))
+        .andExpect(jsonPath("$.translated", is("I am Groot!")))
+        .andDo(print());
   }
 }
