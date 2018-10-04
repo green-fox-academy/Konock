@@ -1,14 +1,22 @@
 package com.greenfoxacademy.corsacorientationexam.controllers;
 
+import com.greenfoxacademy.corsacorientationexam.services.SpaceshipService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class MainController {
+  @Autowired
+  SpaceshipService spaceshipService;
+
 
   @GetMapping("/")
-  public String showPage() {
+  public String showPage(Model model) {
+    model.addAttribute("planets", spaceshipService.getPlanets());
+    model.addAttribute("spaceship", spaceshipService.getSpaceship());
     return "index";
   }
 

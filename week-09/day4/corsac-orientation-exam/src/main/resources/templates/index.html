@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8"/>
     <title>Space Transporter</title>
 </head>
 <body>
@@ -14,7 +14,18 @@
     <th>People on the ship</th>
     </thead>
     <tbody>
-    <tr></tr>
+    <tr th:each="planet : ${planets}">
+        <td th:text="${planet.name}"></td>
+        <td th:text="${planet.population}"></td>
+        <td th:if="${spaceship.planet != planet.name}">
+            <button>Move here</button>
+        </td>
+        <td th:if="${spaceship.planet == planet.name}">
+            <a>← to planet</a>
+            <a>to ship →</a>
+        </td>
+        <td th:text="${spaceship.planet == planet.name}? ${spaceship.utilization} : ''"></td>
+    </tr>
     </tbody>
 </table>
 </body>
