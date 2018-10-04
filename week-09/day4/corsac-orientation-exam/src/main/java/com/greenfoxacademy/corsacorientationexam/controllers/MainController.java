@@ -27,13 +27,15 @@ public class MainController {
     return "redirect:/";
   }
 
-  @GetMapping("/toship")
-  public String toShip() {
+  @GetMapping("/toship/{id}")
+  public String toShip(@PathVariable(value = "id") long id) {
+    spaceshipService.moveToShip(id);
     return "redirect:/";
   }
 
-  @GetMapping("/toplanet")
-  public String toPlanet() {
+  @GetMapping("/toplanet/{id}")
+  public String toPlanet(@PathVariable(value = "id") long id) {
+    spaceshipService.moveToPlanet(id);
     return "redirect:/";
   }
 

@@ -23,8 +23,8 @@
             </form>
         </td>
         <td th:if="${spaceship.planet == planet.name}">
-            <a>← to planet</a>
-            <a>to ship →</a>
+            <a th:href="@{'/toplanet/' + ${planet.id}}">← to planet</a>
+            <a th:href="@{'/toship/' + ${planet.id}}">to ship →</a>
         </td>
         <td th:text="${spaceship.planet == planet.name}? ${spaceship.utilization} : ''"></td>
     </tr>
