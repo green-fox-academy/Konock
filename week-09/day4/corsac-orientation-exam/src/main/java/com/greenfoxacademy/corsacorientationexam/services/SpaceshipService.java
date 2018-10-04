@@ -37,8 +37,8 @@ public class SpaceshipService {
     if (spaceship.getPlanet().equals(planet.getName())) {
       int freeCapacity = spaceship.getMax_capacity() - spaceship.getUtilization();
       if (freeCapacity > 0 && freeCapacity > planet.getPopulation()) {
-        planet.setPopulation(0);
         spaceship.setUtilization((int) planet.getPopulation());
+        planet.setPopulation(0);
       } else if (freeCapacity > 0 && freeCapacity <= planet.getPopulation()) {
         planet.setPopulation(planet.getPopulation() - freeCapacity);
         spaceship.setUtilization(spaceship.getUtilization() + freeCapacity);
