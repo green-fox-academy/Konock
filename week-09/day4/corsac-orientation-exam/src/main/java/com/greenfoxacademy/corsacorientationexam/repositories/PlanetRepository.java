@@ -9,4 +9,5 @@ import java.util.List;
 @Repository
 public interface PlanetRepository extends CrudRepository<Planet, Long> {
   List<Planet> findAll();
+  Planet findById(long id);
 }

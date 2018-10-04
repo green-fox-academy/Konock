@@ -18,7 +18,9 @@
         <td th:text="${planet.name}"></td>
         <td th:text="${planet.population}"></td>
         <td th:if="${spaceship.planet != planet.name}">
-            <button>Move here</button>
+            <form th:action="@{'/movehere/' + ${planet.id}}" method="post">
+                <input type="submit" value="Move here">
+            </form>
         </td>
         <td th:if="${spaceship.planet == planet.name}">
             <a>← to planet</a>

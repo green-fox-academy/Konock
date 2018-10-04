@@ -21,6 +21,12 @@ public class SpaceshipService {
   }
 
   public Spaceship getSpaceship() {
-    return spaceshipRepository.findById((long)1).orElse(null);
+    return spaceshipRepository.findById((long)1);
+  }
+
+  public void moveSpaceship(long id) {
+    Spaceship spaceship = getSpaceship();
+    spaceship.setPlanet(planetRepository.findById(id).getName());
+    spaceshipRepository.save(spaceship);
   }
 }
