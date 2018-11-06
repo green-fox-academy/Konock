@@ -1,6 +1,6 @@
 # Backend exam topics & more
 
-## [Endpoint]()
+## [Endpoint](https://github.com/green-fox-academy/Konock/blob/master/final_exam_preparation/Endpoint.md)
   - parts of url
   - query params
   - header

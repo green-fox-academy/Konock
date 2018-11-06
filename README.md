@@ -10,4 +10,4 @@ Check out other repos **I** created while _practising_:
 And here's my website repo with some incredibly unique frontend magic:
 [konock.github.io](https://konock.github.io/)
 
-More will follow, stay tuned!
+If you want to read my notes about the final exam topics, [check out this link](https://github.com/green-fox-academy/Konock/blob/master/final_exam_preparation/Backend%20exam%20topics%20%26%20more.md)
