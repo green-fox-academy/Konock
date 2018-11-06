@@ -23,7 +23,7 @@
   - Able to send or receive data either in body or in URL params
   - Able recognize the status for the http request (success / failure)
 
-## Authentication
+## [Authentication](https://github.com/green-fox-academy/Konock/blob/master/final_exam_preparation/Authentication.md)
 
   - token (access)
   - find user by token
