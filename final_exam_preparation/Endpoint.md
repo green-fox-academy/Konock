@@ -21,12 +21,18 @@
  - it is stateless: the client and the server are unaware of the state of each other. When a package is sent by the server, it does not expect an acknowledgment that it arrived.
  - any kind of data can be sent
 
+### HTTPS & SSL
+- an extension of HTTP, S stands for secure
+- in HTTPS, the communication protocol is encrypted using either TLS or SSL
+- See how the secure connection is established below:
+![](https://www.powersolution.com/wp-content/uploads/2013/04/SSL-flowchart.png)
+
 ### Request/Response cycle
 - client and server communicate through HTTP requests and responses
 - a HTTP message consists of three parts:
 	1. Start line: describes the HTTP method (GET), the URI and the HTTP version, or in a HTTP response the status code
 	2. Header - consists of name-value pairs (i.e. host)
-	3. Body - i.e. data sent in a response by the server (html page)
+	3. Body (optional) - i.e. data sent in a response by the server (html page)
 
 ### HTTP status codes
 - 1xx Informational response
