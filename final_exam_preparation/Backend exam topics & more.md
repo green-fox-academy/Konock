@@ -59,25 +59,7 @@
   - Able to explain how data is stored and used over the application
   - Able to demonstrate how to add new property to a model
 
-## Async
-  - Event listeners
-  - callbacks
-  - http
-  - threads
-  - background jobs, processes
-  - Examples:
-    - User clicks on something, what happens
-    - Sending emails
-    - Calling external APIs
-    - Processing background tasks
-
-### Expected skills (2/3)
-
-  - Able to explain main difference between sync and async
-  - Able to demonstrate async piece of code
-  - Able to explain execution order line by line
-
-## Testing
+## [Testing](https://github.com/green-fox-academy/Konock/blob/master/final_exam_preparation/Testing.md)
 
   - unit
   - testing models, components
