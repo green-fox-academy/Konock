@@ -40,4 +40,20 @@
 
 ### Advantages of the MVC pattern
 - loose coupling
+- it means that changes in one class do not force other classes to change
 - code separation allows to unit test the web application in a convenient way
+
+### Dependency Injection, Inversion of Control
+- a technique, in which one object supplies the dependencies of another object
+- DI: the passing of the dependency to a dependent object
+- means of DI:
+	- setter-based
+	- interface-based
+	- constructor-based
+- Using it has the following advantages:
+	- allows loosely coupled design
+	- refactoring one component will not mean that other classes have to be changed
+- some DI tools are gradle or maven
+	- they control the creation and life time of objects of the dependent class.
+- IoC is a design principle, DI is one realisation of it
+	- it means that components of your code are handled (created, serialized, etc) by an external framework
