@@ -100,7 +100,7 @@
   - Able to show how the database is configured / set up in the project
   - Able to explain how models are related in a database
 
-## Refactor
+## [Refactor](https://github.com/green-fox-academy/Konock/blob/master/final_exam_preparation/Refactor.md)
 
   - clean code (naming, single responsibility, complexity)
   - styleguide
@@ -114,7 +114,7 @@
   - Able to recognize redundant code
   - Able to reduce the complexity of a method
 
-## OOP
+## [OOP](https://github.com/green-fox-academy/Konock/blob/master/final_exam_preparation/OOP.md)
 
   - private, public, static
   - encapsulation
